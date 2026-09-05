@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#020203">
+    <title>ES Soluções Digitais | Criação de Sites, Google Meu Negócio e Instagram</title>
+    <meta name="description" content="ES Soluções Digitais oferece criação de sites profissionais, landing pages, gestão de Instagram e Perfil do Google Meu Negócio para empresas que querem mais presença digital, autoridade e resultados.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Configuração de Favicon / Logo para aparecer na pesquisa do Google (SERP) -->
+    <link rel="icon" type="image/png" sizes="48x48" href="imagem/logo.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="imagem/logo.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="imagem/logo.png">
+    <link rel="shortcut icon" type="image/png" href="imagem/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="imagem/logo.png">
+    
+    <meta property="og:title" content="ES Soluções Digitais | Criação de Sites, Google Meu Negócio e Instagram">
+    <meta property="og:description" content="Criação de sites, landing pages, gestão de Instagram e Perfil do Google Meu Negócio para empresas que querem crescer no digital.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="imagem/logo.png">
+    
+    <!-- Dados Estruturados Schema.org JSON-LD para o Google exibir a Logo na pesquisa -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "ES Soluções Digitais",
+      "url": "https://eliel2439-lang.github.io",
+      "logo": "https://eliel2439-lang.github.io/imagem/logo.png",
+      "image": "https://eliel2439-lang.github.io/imagem/foto-eliel-santos.png",
+      "description": "ES Soluções Digitais oferece criação de sites profissionais, landing pages, gestão de Instagram e Perfil do Google Meu Negócio.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "R. Dona Dica, 674",
+        "addressLocality": "Jardim Tranquilidade, Guarulhos",
+        "addressRegion": "SP",
+        "postalCode": "07052-000",
+        "addressCountry": "BR"
+      },
+      "telephone": "+5511913374722"
+    }
+    </script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Space Grotesk e Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#020203',
+                            card: '#08080a',
+                            accent: '#06b6d4', /* Cyan */
+                            gold: '#fbbf24',   /* Amber/Gold */
+                            purple: '#8b5cf6', /* Violet */
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020203;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        /* Gradientes e efeitos luminosos premium */
+        .text-glow {
+            text-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+        }
+
+        .gold-glow {
+            text-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+        }
+
+        .premium-glow-box {
+            box-shadow: 0 0 50px -10px rgba(6, 182, 212, 0.15);
+        }
+
+        .premium-card-border {
+            position: relative;
+        }
+        .premium-card-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 1rem;
+            padding: 1.5px;
+            background: linear-gradient(to bottom right, rgba(6, 182, 212, 0.4), rgba(139, 92, 246, 0.1), rgba(251, 191, 36, 0.4));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #020203;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #222;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #06b6d4;
+        }
+
+        /* Animações de entrada no Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== MOBILE CAROUSEL SPECIFIC STYLES ===== */
+        .carousel-outer {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 1rem 0;
+        }
+        
+        .carousel-track {
+            display: flex;
+            width: 100%;
+            cursor: grab;
+            user-select: none;
+            touch-action: pan-y;
+        }
+        
+        .carousel-track:active {
+            cursor: grabbing;
+        }
+        
+        .carousel-slide {
+            flex: 0 0 82%;
+            max-width: 310px;
+            box-sizing: border-box;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.5s ease;
+        }
+    </style>
+</head>
+<body class="selection:bg-cyan-500 selection:text-black">
+
+    <!-- Fundo de Partículas em Perspectiva 3D ciano e azul interativo -->
+    <canvas id="ambient-3d-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-80"></canvas>
+
+    <!-- Floating Glassmorphic Navbar (Limpa e transparente no topo) -->
+    <header class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-7xl">
+        <nav id="main-nav" class="bg-transparent border border-transparent rounded-2xl px-6 py-4 flex items-center justify-between transition-all duration-500">
+            <!-- Brand Logo -->
+            <a href="#hero" class="flex items-center group gap-3">
+                <div class="h-16 w-16 rounded-xl bg-zinc-900/50 p-1 border border-white/10 flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:scale-105">
+                    <img src="imagem/logo.png" alt="Logo" class="h-full w-full object-contain rounded-lg" onerror="this.onerror=null; this.src='https://placehold.co/120x120/08080a/06b6d4?text=ES';">
+                </div>
+                <span class="hidden sm:block font-display font-bold text-white text-lg tracking-tight">ES Soluções Digitais</span>
+            </a>
+
+            <!-- Menu Desktop - Nomes de links em cor branca limpa -->
+            <div class="hidden md:flex items-center space-x-12 text-sm font-semibold tracking-wide">
+                <a href="#servicos" class="text-white hover:text-cyan-400 transition-colors">Serviços</a>
+                <a href="#portfolio-sites" class="text-white hover:text-cyan-400 transition-colors">Portfólio Sites</a>
+                <a href="#google" class="text-white hover:text-cyan-400 transition-colors">Portfólio Google</a>
+                <a href="#sobre" class="text-white hover:text-cyan-400 transition-colors">Quem Somos</a>
+            </div>
+
+            <!-- Espaçador invisível para manter layout de navegação limpo -->
+            <div class="w-16 h-16 hidden md:block"></div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION (Centralizado, com vídeo de fundo adaptável e película clara) -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-brand-dark">
+        <!-- Vídeo de Fundo para Computador (Desktop) -->
+        <video id="bg-video-desktop" class="hidden md:block absolute inset-0 w-full h-full object-cover z-0" autoplay muted loop playsinline>
+            <source src="imagem/video-desktop.mp4" type="video/mp4">
+        </video>
+
+        <!-- Vídeo de Fundo para Celular (Mobile) -->
+        <video id="bg-video-mobile" class="block md:hidden absolute inset-0 w-full h-full object-cover z-0" autoplay muted loop playsinline>
+            <source src="imagem/video-mobile.mp4" type="video/mp4">
+        </video>
+
+        <!-- Película clara de sobreposição para manter excelente leitura e visibilidade do vídeo -->
+        <div class="absolute inset-0 bg-black/35 z-10 pointer-events-none"></div>
+        
+        <!-- Conteúdo do Hero perfeitamente Centralizado na Página -->
+        <div class="max-w-4xl mx-auto px-6 relative z-30 w-full text-center py-20 flex flex-col items-center justify-center">
+
+            <!-- Nome da empresa em destaque -->
+            <h2 class="text-xs sm:text-sm font-bold text-cyan-400 uppercase tracking-widest bg-cyan-400/10 px-4 py-1.5 rounded-full mb-6 inline-block">ES Soluções Digitais</h2>
+
+            <!-- Título centralizado -->
+            <h1 class="text-4xl sm:text-6xl font-black font-display leading-[1.1] tracking-tight text-white mb-6">
+                Criação de Sites, <span class="text-white">Landing Pages</span> e Google Meu Negócio
+            </h1>
+
+            <!-- Subtítulo centralizado -->
+            <p class="text-white font-semibold text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-10">
+                Desenvolvemos sites professionals, landing pages estratégicas, gestão de Instagram e otimização de Perfil do Google Meu Negócio para empresas que querem fortalecer sua presença digital, transmitir mais confiança e atrair mais clientes pela internet.
+            </p>
+
+            <!-- Botões de Ação centralizados -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+                <a href="https://wa.me/5511913374722?text=Ol%C3%A1%20Eliel,%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20meu%20projeto!"
+                   target="_blank"
+                   class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 rounded-xl font-bold text-center text-white shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
+                    <i class="fab fa-whatsapp text-xl"></i> Solicitar Orçamento
+                </a>
+                <a href="#portfolio-sites" class="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 rounded-xl font-semibold text-center text-gray-300 hover:bg-white/10 transition-all">
+                    Ver Projetos <i class="fas fa-arrow-down ml-2"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="py-24 relative overflow-hidden bg-transparent">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+            <div class="text-center max-w-2xl mx-auto mb-20 space-y-4 reveal">
+                <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest bg-cyan-400/10 px-3 py-1 rounded-full">MARKETING DIGITAL PARA EMPRESAS</span>
+                <h2 class="text-3xl sm:text-5xl font-black font-display text-white">Criação de Sites, Landing Pages e Google Meu Negócio</h2>
+                <p class="text-gray-400 text-lg font-light">Serviços de marketing digital para empresas que querem ter um site profissional, melhorar o Perfil do Google Meu Negócio, fortalecer o Instagram e atrair mais clientes pela internet.</p>
+            </div>
+
+            <!-- Carrossel Peeking para Mobile - Todos os 6 Serviços Restaurados -->
+            <div class="md:hidden carousel-outer" data-carousel-id="servicos">
+                <div class="carousel-track" data-carousel-slider>
+                    
+                    <!-- Slide 1: Criação de Sites -->
+                    <div class="carousel-slide px-2" data-carousel-slide>
+                        <div class="relative h-[440px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex flex-col justify-end p-6">
+                            <img src="imagem/imagemcriacao-de-sites-profissionais.png" alt="Criação de Sites" class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x600/111/fff?text=Criacao+de+Sites';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent z-0"></div>
+                            
+                            <div class="relative z-10 space-y-4">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-[10px] font-mono text-cyan-400 tracking-wider uppercase bg-cyan-950/80 border border-cyan-500/30 px-2 py-0.5 rounded">💻 Elite Web</span>
+                                </div>
+                                <h3 class="text-2xl font-black font-display text-white leading-tight">Criação de Sites</h3>
+                                <p class="text-white text-xs sm:text-sm leading-relaxed">Sites institucionais elegantes, extremamente velozes e focados em credibilidade de alto padrão.</p>
+                                <a href="https://wa.me/5511913374722?text=Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20Cria%C3%A7%C3%A3o%20de%20Sites" target="_blank" class="w-full py-3 bg-[#075e54] hover:bg-[#128c7e] text-white rounded-xl text-xs font-bold text-center flex items-center justify-center gap-2 transition-all">
+                                    <i class="fab fa-whatsapp text-sm"></i> Solicitar Orçamento
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Landing Pages -->
+                    <div class="carousel-slide px-2" data-carousel-slide>
+                        <div class="relative h-[440px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex flex-col justify-end p-6">
+                            <img src="imagem/imagemlanding-page-alta-conversao.png" alt="Landing Pages" class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x600/111/fff?text=Landing+Pages';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent z-0"></div>
+                            
+                            <div class="relative z-10 space-y-4">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-[10px] font-mono text-purple-400 tracking-wider uppercase bg-purple-950/80 border border-purple-500/30 px-2 py-0.5 rounded">🚀 Vendas</span>
+                                </div>
+                                <h3 class="text-2xl font-black font-display text-white leading-tight">Landing Pages</h3>
+                                <p class="text-white text-xs sm:text-sm leading-relaxed">Páginas de conversão de alto impacto operacional e técnico para seus anúncios no Google e Meta.</p>
+                                <a href="https://wa.me/5511913374722?text=Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20Landing%20Pages" target="_blank" class="w-full py-3 bg-[#075e54] hover:bg-[#128c7e] text-white rounded-xl text-xs font-bold text-center flex items-center justify-center gap-2 transition-all">
+                                    <i class="fab fa-whatsapp text-sm"></i> Solicitar Orçamento
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Perfil do Google -->
+                    <div class="carousel-slide px-2" data-carousel-slide>
+                        <div class="relative h-[440px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex flex-col justify-end p-6">
+                            <img src="imagem/imagemcriacao-perfil-google-meu-negocio.png" alt="Google Business" class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x600/111/fff?text=Perfil+Google';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent z-0"></div>
+                            
+                            <div class="relative z-10 space-y-4">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-[10px] font-mono text-amber-400 tracking-wider uppercase bg-amber-950/80 border border-amber-500/30 px-2 py-0.5 rounded">📍 Local</span>
+                                </div>
+                                <h3 class="text-2xl font-black font-display text-white leading-tight">Perfil do Google</h3>
+                                <p class="text-white text-xs sm:text-sm leading-relaxed">Configuração profissional completa do seu negócio no Google Maps para busca regional de clientes.</p>
+                                <a href="https://wa.me/5511913374722?text=Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20Cria%C3%A7%C3%A3o%20de%20Perfil%20do%20Google" target="_blank" class="w-full py-3 bg-[#075e54] hover:bg-[#128c7e] text-white rounded-xl text-xs font-bold text-center flex items-center justify-center gap-2 transition-all">
+                                    <i class="fab fa-whatsapp text-sm"></i> Solicitar Orçamento
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4: Otimização do Perfil -->
+                    <div class="carousel-slide px-2" data-carousel-slide>
+                        <div class="relative h-[440px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex flex-col justify-end p-6">
+                            <img src="imagem/imagemotimizacao-seo-local-google-maps.png" alt="SEO Local" class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x600/111/fff?text=SEO+Local';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent z-0"></div>
+                            
+                            <div class="relative z-10 space-y-4">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-[10px] font-mono text-emerald-400 tracking-wider uppercase bg-emerald-950/80 border border-emerald-500/30 px-2 py-0.5 rounded">📈 SEO Local</span>
+                                </div>
+                                <h3 class="text-2xl font-black font-display text-white leading-tight">Otimização de Perfil</h3>
+                                <p class="text-white text-xs sm:text-sm leading-relaxed">SEO Local avançado para superar a concorrência e alcançar as primeiras posições do mapa.</p>
+                                <a href="https://wa.me/5511913374722?text=Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20Otimiza%C3%A7%C3%A3o%20do%20Perfil%20do%20Google" target="_blank" class="w-full py-3 bg-[#075e54] hover:bg-[#128c7e] text-white rounded-xl text-xs font-bold text-center flex items-center justify-center gap-2 transition-all">
+                                    <i class="fab fa-whatsapp text-sm"></i> Solicitar Orçamento
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5: Gestão de Instagram -->
+                    <div class="carousel-slide px-2" data-carousel-slide>
+                        <div class="relative h-[440px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex flex-col justify-end p-6">
+                            <img src="imagem/imagemgestao-de-instagram-profissional.png" alt="Instagram" class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x600/111/fff?text=Instagram';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent z-0"></div>
+                            
+                            <div class="relative z-10 space-y-4">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-[10px] font-mono text-pink-400 tracking-wider uppercase bg-pink-950/80 border border-pink-500/30 px-2 py-0.5 rounded">🎨 Branding</span>
+                                </div>
+                                <h3 class="text-2xl font-black font-display text-white leading-tight">Gestão de Instagram</h3>
+                                <p class="text-white text-xs sm:text-sm leading-relaxed">Branding visual, artes premium e linha editorial inteligente para conquistar desejo na rede social.</p>
+                                <a href="https://wa.me/5511913374722?text=Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20Gest%C3%A3o%20de%20Instagram" target="_blank" class="w-full py-3 bg-[#075e54] hover:bg-[#128c7e] text-white rounded-xl text-xs font-bold text-center flex items-center justify-center gap-2 transition-all">
+                                    <i class="fab fa-whatsapp text-sm"></i> Solicitar Orçamento
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6: Gestão Google -->
+                    <div class="carousel-slide px-2" data-carousel-slide>
+                        <div class="relative h-[440px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex flex-col justify-end p-6">
+                            <img src="imagem/imagemotimizacao-seo-local-google-maps (2).png" alt="Gestão Google" class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x600/111/fff?text=Gestao+Google';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent z-0"></div>
+                            
+                            <div class="relative z-10 space-y-4">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-[10px] font-mono text-blue-400 tracking-wider uppercase bg-blue-950/80 border border-blue-500/30 px-2 py-0.5 rounded">📊 Gestão</span>
+                                </div>
+                                <h3 class="text-2xl font-black font-display text-white leading-tight">Gestão de Perfil</h3>
+                                <p class="text-white text-xs sm:text-sm leading-relaxed">Acompanhamento contínuo e atualizações estratégicas contra a concorrência local.</p>
+                                <a href="https://wa.me/5511913374722?text=Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20Gest%C3%A3o%20de%20Perfil%20do%20Google" target="_blank" class="w-full py-3 bg-[#075e54] hover:bg-[#128c7e] text-white rounded-xl text-xs font-bold text-center flex items-center justify-center gap-2 transition-all">
+                                    <i class="fab fa-whatsapp text-sm"></i> Solicitar Orçamento
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Pagination Dots -->
+                <div class="flex justify-center space-x-2 mt-6" data-carousel-dots></div>
+            </div>
+
+            <!-- Grid Desktop - Todos os 6 Serviços Restaurados -->
+            <div class="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
+                
+                <!-- Serviço 1: Criação de Sites -->
+                <div class="relative h-[420px] rounded-2xl overflow-hidden border border-white/10 group shadow-2xl hover:border-cyan-500/30 transition-all duration-500 flex flex-col justify-end">
+                    <img src="imagem/imagemcriacao-de-sites-profissionais.png" alt="Criação de Sites" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x600/111/fff?text=Criacao+de+Sites';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent z-0"></div>
+                    <div class="relative z-10 p-6 space-y-3">
+                        <span class="text-[10px] font-mono text-cyan-400 tracking-wider uppercase mb-1">Web Design de Elite</span>
+                        <h3 class="text-xl font-bold text-white font-display">1. Criação de Sites</h3>
+                        <p class="text-white text-xs mt-1 leading-relaxed">Sites institucionais elegantes, velozes e focados em credibilidade.</p>
+                        <a href="https://wa.me/5511913374722?text=Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20Cria%C3%A7%C3%A3o%20de%20Sites" target="_blank" class="w-full py-2.5 bg-[#075e54] hover:bg-[#128c7e] text-white rounded-xl text-xs font-bold text-center flex items-center justify-center gap-2 transition-all">
+                            <i class="fab fa-whatsapp text-sm"></i> Solicitar Orçamento
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Serviço 2: Criação de Landing Pages -->
+                <div class="relative h-[420px] rounded-2xl overflow-hidden border border-white/10 group shadow-2xl hover:border-purple-500/30 transition-all duration-500 flex flex-col justify-end">
+                    <img src="imagem/imagemlanding-page-alta-conversao.png" alt="Criação de Landing Pages" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x600/111/fff?text=Landing+Pages';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent z-0"></div>
+                    <div class="relative z-10 p-6 space-y-3">
+                        <span class="text-[10px] font-mono text-purple-400 tracking-wider uppercase mb-1">Foco em Conversão</span>
+                        <h3 class="text-xl font-bold text-white font-display">2. Criação de Landing Pages</h3>
+                        <p class="text-white text-xs mt-1 leading-relaxed">Páginas de vendas de alto impacto para anúncios no Google e Instagram.</p>
+                        <a href="https://wa.me/5511913374722?text=Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20Landing%20Pages" target="_blank" class="w-full py-2.5 bg-[#075e54] hover:bg-[#128c7e] text-white rounded-xl text-xs font-bold text-center flex items-center justify-center gap-2 transition-all">
+                            <i class="fab fa-whatsapp text-sm"></i> Solicitar Orçamento
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Serviço 3: Criação de Perfil do Google -->
+                <div class="relative h-[420px] rounded-2xl overflow-hidden border border-white/10 group shadow-2xl hover:border-amber-500/30 transition-all duration-500 flex flex-col justify-end">
+                    <img src="imagem/imagemcriacao-perfil-google-meu-negocio.png" alt="Criação de Perfil do Google" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x600/111/fff?text=Perfil+Google';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent z-0"></div>
+                    <div class="relative z-10 p-6 space-y-3">
+                        <span class="text-[10px] font-mono text-amber-400 tracking-wider uppercase mb-1">Configuração Local</span>
+                        <h3 class="text-xl font-bold text-white font-display">3. Criação de Perfil do Google</h3>
+                        <p class="text-white text-xs mt-1 leading-relaxed">Inserção completa do seu negócio comercial no Google e Maps de forma profissional.</p>
+                        <a href="https://wa.me/5511913374722?text=Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20Cria%C3%A7%C3%A3o%20de%20Perfil%20do%20Google" target="_blank" class="w-full py-2.5 bg-[#075e54] hover:bg-[#128c7e] text-white rounded-xl text-xs font-bold text-center flex items-center justify-center gap-2 transition-all">
+                            <i class="fab fa-whatsapp text-sm"></i> Solicitar Orçamento
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Serviço 4: Otimização do Perfil -->
+                <div class="relative h-[420px] rounded-2xl overflow-hidden border border-white/10 group shadow-2xl hover:border-emerald-500/30 transition-all duration-500 flex flex-col justify-end">
+                    <img src="imagem/imagemotimizacao-seo-local-google-maps.png" alt="Otimização Google" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x600/111/fff?text=SEO+Local';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent z-0"></div>
+                    <div class="relative z-10 p-6 space-y-3">
+                        <span class="text-[10px] font-mono text-emerald-400 tracking-wider uppercase mb-1">SEO Local Avançado</span>
+                        <h3 class="text-xl font-bold text-white font-display">4. Otimização do Perfil</h3>
+                        <p class="text-white text-xs mt-1 leading-relaxed">SEO Local avançado para subir posições nas buscas locais e mapa do Google.</p>
+                        <a href="https://wa.me/5511913374722?text=Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20Otimiza%C3%A7%C3%A3o%20do%20Perfil%20do%20Google" target="_blank" class="w-full py-2.5 bg-[#075e54] hover:bg-[#128c7e] text-white rounded-xl text-xs font-bold text-center flex items-center justify-center gap-2 transition-all">
+                            <i class="fab fa-whatsapp text-sm"></i> Solicitar Orçamento
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Serviço 5: Gestão de Instagram -->
+                <div class="relative h-[420px] rounded-2xl overflow-hidden border border-white/10 group shadow-2xl hover:border-pink-500/30 transition-all duration-500 flex flex-col justify-end">
+                    <img src="imagem/imagemgestao-de-instagram-profissional.png" alt="Gestão de Instagram" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x600/111/fff?text=Instagram';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent z-0"></div>
+                    <div class="relative z-10 p-6 space-y-3">
+                        <span class="text-[10px] font-mono text-pink-400 tracking-wider uppercase mb-1">Branding & Social Media</span>
+                        <h3 class="text-xl font-bold text-white font-display">5. Gestão de Instagram</h3>
+                        <p class="text-white text-xs mt-1 leading-relaxed">Artes modernas e cronograma ativo para engajar seu público-alvo com alto visual.</p>
+                        <a href="https://wa.me/5511913374722?text=Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20Gest%C3%A3o%20de%20Instagram" target="_blank" class="w-full py-2.5 bg-[#075e54] hover:bg-[#128c7e] text-white rounded-xl text-xs font-bold text-center flex items-center justify-center gap-2 transition-all">
+                            <i class="fab fa-whatsapp text-sm"></i> Solicitar Orçamento
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Serviço 6: Gestão de Perfil do Google -->
+                <div class="relative h-[420px] rounded-2xl overflow-hidden border border-white/10 group shadow-2xl hover:border-blue-500/30 transition-all duration-500 flex flex-col justify-end">
+                    <img src="imagem/imagemotimizacao-seo-local-google-maps (2).png" alt="Gestão de Perfil Google" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x600/111/fff?text=Gestao+Google';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent z-0"></div>
+                    <div class="relative z-10 p-6 space-y-3">
+                        <span class="text-[10px] font-mono text-blue-400 tracking-wider uppercase mb-1">Acompanhamento Mensal</span>
+                        <h3 class="text-xl font-bold text-white font-display">6. Gestão de Perfil do Google</h3>
+                        <p class="text-white text-xs mt-1 leading-relaxed">Atualizações contínuas e estratégias contra concorrência para blindar sua marca.</p>
+                        <a href="https://wa.me/5511913374722?text=Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20Gest%C3%A3o%20de%20Perfil%20do%20Google" target="_blank" class="w-full py-2.5 bg-[#075e54] hover:bg-[#128c7e] text-white rounded-xl text-xs font-bold text-center flex items-center justify-center gap-2 transition-all">
+                            <i class="fab fa-whatsapp text-sm"></i> Solicitar Orçamento
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PORTFÓLIO DE SITES -->
+    <section id="portfolio-sites" class="py-24 relative bg-transparent overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            
+            <div class="flex flex-col md:flex-row items-center justify-between mb-16 gap-6 reveal">
+                <div class="space-y-4 text-center md:text-left">
+                    <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest bg-cyan-400/10 px-3 py-1 rounded-full">PORTFÓLIO DE SITES PROFISSIONAIS</span>
+                    <h2 class="text-3xl sm:text-5xl font-black font-display text-white">
+                        Sites Criados para Empresas que Querem Mais Presença Digital
+                    </h2>
+                    <p class="text-gray-400 text-lg font-light max-w-2xl">
+                        Confira exemplos de sites profissionais desenvolvidos com foco em design moderno, carregamento rápido, boa experiência no celular e estrutura pensada para atrair clientes pela internet.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Carrossel Peeking para Mobile - Todos os 6 Sites Restaurados -->
+            <div class="md:hidden carousel-outer" data-carousel-id="portfolio-sites">
+                <div class="carousel-track" data-carousel-slider>
+                    
+                    <!-- Slide 1: Sofia Turismo -->
+                    <div class="carousel-slide px-2" data-carousel-slide>
+                        <div class="bg-zinc-950 border border-white/5 rounded-2xl overflow-hidden flex flex-col justify-between h-[450px]">
+                            <div class="w-full aspect-[16/10] bg-zinc-900 flex flex-col border-b border-white/5 overflow-hidden">
+                                <div class="bg-zinc-950/85 px-4 py-2 flex items-center gap-2 border-b border-white/5">
+                                    <div class="flex gap-1.5">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-red-500/80"></span>
+                                        <span class="w-1.5 h-1.5 rounded-full bg-yellow-500/80"></span>
+                                        <span class="w-1.5 h-1.5 rounded-full bg-green-500/80"></span>
+                                    </div>
+                                    <div class="bg-zinc-900/60 text-[9px] text-gray-400 px-3 py-0.5 rounded-md flex-1 text-center font-mono truncate">sofiaturismo.com.br</div>
+                                </div>
+                                <div class="relative flex-1 overflow-hidden">
+                                    <img src="imagem/portfolio-locacao-onibus-turismo.png" alt="Sofia Turismo" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/600x400/111/fff?text=Sofia+Turismo';">
+                                </div>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col justify-between bg-zinc-950">
+                                <div class="space-y-1">
+                                    <span class="text-[10px] font-bold text-cyan-400 uppercase">Turismo e Transporte</span>
+                                    <h3 class="text-md font-bold text-white font-display">Sofia Turismo</h3>
+                                    <p class="text-gray-400 text-[11px] leading-tight">Site institucional focado em locação de ônibus e fretamentos de alta escala.</p>
+                                </div>
+                                <a href="https://sofiaturismo.com.br/" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-white transition-colors">
+                                    Ver Site Ativo <i class="fas fa-external-link-alt text-[9px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Rebeca Martins -->
+                    <div class="carousel-slide px-2" data-carousel-slide>
+                        <div class="bg-zinc-950 border border-white/5 rounded-2xl overflow-hidden flex flex-col justify-between h-[450px]">
+                            <div class="w-full aspect-[16/10] bg-zinc-900 flex flex-col border-b border-white/5 overflow-hidden">
+                                <div class="bg-zinc-950/85 px-4 py-2 flex items-center gap-2 border-b border-white/5">
+                                    <div class="flex gap-1.5">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-red-500/80"></span>
+                                        <span class="w-1.5 h-1.5 rounded-full bg-yellow-500/80"></span>
+                                        <span class="w-1.5 h-1.5 rounded-full bg-green-500/80"></span>
+                                    </div>
+                                    <div class="bg-zinc-900/60 text-[9px] text-gray-400 px-3 py-0.5 rounded-md flex-1 text-center font-mono truncate">rebecamartins.com.br</div>
+                                </div>
+                                <div class="relative flex-1 overflow-hidden">
+                                    <img src="imagem/portfolio-nail-designer-estudio-unhas.png" alt="Rebeca Martins" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/600x400/111/fff?text=Rebeca+Martins';">
+                                </div>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col justify-between bg-zinc-950">
+                                <div class="space-y-1">
+                                    <span class="text-[10px] font-bold text-purple-400 uppercase">Beleza & Estética</span>
+                                    <h3 class="text-md font-bold text-white font-display">Rebeca Martins</h3>
+                                    <p class="text-gray-400 text-[11px] leading-tight">Landing Page premium para agendamentos e exibição de procedimentos de alongamento de unhas.</p>
+                                </div>
+                                <a href="https://rebecamartinsnaildesigner.com.br/" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-purple-400 hover:text-white transition-colors">
+                                    Ver Site Ativo <i class="fas fa-external-link-alt text-[9px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Pet d'Avila -->
+                    <div class="carousel-slide px-2" data-carousel-slide>
+                        <div class="bg-zinc-950 border border-white/5 rounded-2xl overflow-hidden flex flex-col justify-between h-[450px]">
+                            <div class="w-full aspect-[16/10] bg-zinc-900 flex flex-col border-b border-white/5 overflow-hidden">
+                                <div class="bg-zinc-950/85 px-4 py-2 flex items-center gap-2 border-b border-white/5">
+                                    <div class="flex gap-1.5">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-red-500/80"></span>
+                                        <span class="w-1.5 h-1.5 rounded-full bg-yellow-500/80"></span>
+                                        <span class="w-1.5 h-1.5 rounded-full bg-green-500/80"></span>
+                                    </div>
+                                    <div class="bg-zinc-900/60 text-[9px] text-gray-400 px-3 py-0.5 rounded-md flex-1 text-center font-mono truncate">petdavilaa.com.br</div>
+                                </div>
+                                <div class="relative flex-1 overflow-hidden">
+                                    <img src="imagem/portfolio-pet-shop-banho-tosa.png" alt="Pet d'Avila" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/600x400/111/fff?text=Pet+dAvila';">
+                                </div>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col justify-between bg-zinc-950">
+                                <div class="space-y-1">
+                                    <span class="text-[10px] font-bold text-amber-400 uppercase">Pet Shop & Veterinária</span>
+                                    <h3 class="text-md font-bold text-white font-display">Pet d'Avila</h3>
+                                    <p class="text-gray-400 text-[11px] leading-tight">Plataforma interativa para agendamento de banho, tosa e cuidados veterinários.</p>
+                                </div>
+                                <a href="https://petdavilaa.com.br/" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-400 hover:text-white transition-colors">
+                                    Ver Site Ativo <i class="fas fa-external-link-alt text-[9px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4: Fênix Vedações -->
+                    <div class="carousel-slide px-2" data-carousel-slide>
+                        <div class="bg-zinc-950 border border-white/5 rounded-2xl overflow-hidden flex flex-col justify-between h-[450px]">
+                            <div class="w-full aspect-[16/10] bg-zinc-900 flex flex-col border-b border-white/5 overflow-hidden">
+                                <div class="bg-zinc-950/85 px-4 py-2 flex items-center gap-2 border-b border-white/5">
+                                    <div class="flex gap-1.5">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-red-500/80"></span>
+                                        <span class="w-1.5 h-1.5 rounded-full bg-yellow-500/80"></span>
+                                        <span class="w-1.5 h-1.5 rounded-full bg-green-500/80"></span>
+                                    </div>
+                                    <div class="bg-zinc-900/60 text-[9px] text-gray-400 px-3 py-0.5 rounded-md flex-1 text-center font-mono truncate">fenixvedacoes.com.br</div>
+                                </div>
+                                <div class="relative flex-1 overflow-hidden">
+                                    <img src="imagem/portfolio-vedacoes-industriais.png" alt="Fênix Vedações" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/600x400/111/fff?text=Fenix+Vedacoes';">
+                                </div>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col justify-between bg-zinc-950">
+                                <div class="space-y-1">
+                                    <span class="text-[10px] font-bold text-emerald-400 uppercase">Indústria & B2B</span>
+                                    <h3 class="text-md font-bold text-white font-display">Fênix Vedações</h3>
+                                    <p class="text-gray-400 text-[11px] leading-tight">Catálogo digital completo para comercialização e fabricação de vedações industriais.</p>
+                                </div>
+                                <a href="https://www.fenixvedacoes.com.br/index.html" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 hover:text-white transition-colors">
+                                    Ver Site Ativo <i class="fas fa-external-link-alt text-[9px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5: Adorada Materiais -->
+                    <div class="carousel-slide px-2" data-carousel-slide>
+                        <div class="bg-zinc-950 border border-white/5 rounded-2xl overflow-hidden flex flex-col justify-between h-[450px]">
+                            <div class="w-full aspect-[16/10] bg-zinc-900 flex flex-col border-b border-white/5 overflow-hidden">
+                                <div class="bg-zinc-950/85 px-4 py-2 flex items-center gap-2 border-b border-white/5">
+                                    <div class="flex gap-1.5">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-red-500/80"></span>
+                                        <span class="w-1.5 h-1.5 rounded-full bg-yellow-500/80"></span>
+                                        <span class="w-1.5 h-1.5 rounded-full bg-green-500/80"></span>
+                                    </div>
+                                    <div class="bg-zinc-900/60 text-[9px] text-gray-400 px-3 py-0.5 rounded-md flex-1 text-center font-mono truncate">adoradamateriais.com.br</div>
+                                </div>
+                                <div class="relative flex-1 overflow-hidden">
+                                    <img src="imagem/portfolio-materiais-de-construcao.png" alt="Adorada Materiais" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/600x400/111/fff?text=Adorada+Materiais';">
+                                </div>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col justify-between bg-zinc-950">
+                                <div class="space-y-1">
+                                    <span class="text-[10px] font-bold text-pink-400 uppercase">Construção Civil</span>
+                                    <h3 class="text-md font-bold text-white font-display">Adorada Materiais</h3>
+                                    <p class="text-gray-400 text-[11px] leading-tight">Canal de vendas institucional e vitrine de materiais básicos e acabamentos para construção.</p>
+                                </div>
+                                <a href="https://adoradamateriais.com.br/" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-pink-400 hover:text-white transition-colors">
+                                    Ver Site Ativo <i class="fas fa-external-link-alt text-[9px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6: NS Embalagens -->
+                    <div class="carousel-slide px-2" data-carousel-slide>
+                        <div class="bg-zinc-950 border border-white/5 rounded-2xl overflow-hidden flex flex-col justify-between h-[450px]">
+                            <div class="w-full aspect-[16/10] bg-zinc-900 flex flex-col border-b border-white/5 overflow-hidden">
+                                <div class="bg-zinc-950/85 px-4 py-2 flex items-center gap-2 border-b border-white/5">
+                                    <div class="flex gap-1.5">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-red-500/80"></span>
+                                        <span class="w-1.5 h-1.5 rounded-full bg-yellow-500/80"></span>
+                                        <span class="w-1.5 h-1.5 rounded-full bg-green-500/80"></span>
+                                    </div>
+                                    <div class="bg-zinc-900/60 text-[9px] text-gray-400 px-3 py-0.5 rounded-md flex-1 text-center font-mono truncate">nsembalagens.com.br</div>
+                                </div>
+                                <div class="relative flex-1 overflow-hidden">
+                                    <img src="imagem/portfolio-fabricante-caixas-papelao.png" alt="NS Embalagens" class="w-full h-full object-cover object-top" onerror="this.onerror=null; this.src='https://placehold.co/600x400/111/fff?text=NS+Embalagens';">
+                                </div>
+                            </div>
+                            <div class="p-5 flex-grow flex flex-col justify-between bg-zinc-950">
+                                <div class="space-y-1">
+                                    <span class="text-[10px] font-bold text-blue-400 uppercase">Embalagens & Papelão</span>
+                                    <h3 class="text-md font-bold text-white font-display">NS Embalagens</h3>
+                                    <p class="text-gray-400 text-[11px] leading-tight">Apresentação corporativa de fabricação e distribuição de caixas de papelão ondulado.</p>
+                                </div>
+                                <a href="https://nsembalagens.com.br/" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-white transition-colors">
+                                    Ver Site Ativo <i class="fas fa-external-link-alt text-[9px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Pagination Dots -->
+                <div class="flex justify-center space-x-2 mt-6" data-carousel-dots></div>
+            </div>
+
+            <!-- Grid de Portfólio de 6 Sites Reais (Computador e Tablet) com molduras widescreen aspect-[16/10] -->
+            <div class="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
+                
+                <!-- Case 1: Sofia Turismo -->
+                <div class="relative group">
+                    <div id="case1-desktop" class="bg-zinc-950 border border-white/5 rounded-2xl overflow-hidden hover:border-cyan-500/30 transition-all duration-500 flex flex-col justify-between shadow-lg h-full">
+                        <div class="w-full aspect-[16/10] bg-zinc-900 flex flex-col border-b border-white/5 overflow-hidden">
+                            <div class="bg-zinc-950/80 px-4 py-2.5 flex items-center gap-2 border-b border-white/5">
+                                <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500/80"></span><span class="w-2 h-2 rounded-full bg-yellow-500/80"></span><span class="w-2 h-2 rounded-full bg-green-500/80"></span></div>
+                                <div class="bg-zinc-900/60 text-[10px] text-gray-400 px-3 py-0.5 rounded-md flex-1 text-center font-mono truncate">sofiaturismo.com.br</div>
+                            </div>
+                            <div class="relative flex-1 overflow-hidden">
+                                <img src="imagem/portfolio-locacao-onibus-turismo.png" alt="Sofia Turismo" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/111/fff?text=Sofia+Turismo';">
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4 flex flex-col justify-between flex-grow">
+                            <div class="space-y-2">
+                                <span class="text-xs font-bold text-cyan-400">Turismo e Fretamento</span>
+                                <h3 class="text-xl font-bold text-white font-display">Sofia Turismo</h3>
+                                <p class="text-gray-400 text-xs">Site institucional completo voltado para locação de ônibus e transporte corporativo.</p>
+                            </div>
+                            <a href="https://sofiaturismo.com.br/" target="_blank" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 hover:text-white transition-colors group/btn">Ver Site Ativo <i class="fas fa-external-link-alt text-xs transition-transform group-hover/btn:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 2: Rebeca Martins -->
+                <div class="relative group">
+                    <div id="case2-desktop" class="bg-zinc-950 border border-white/5 rounded-2xl overflow-hidden hover:border-purple-500/30 transition-all duration-500 flex flex-col justify-between shadow-lg h-full">
+                        <div class="w-full aspect-[16/10] bg-zinc-900 flex flex-col border-b border-white/5 overflow-hidden">
+                            <div class="bg-zinc-950/80 px-4 py-2.5 flex items-center gap-2 border-b border-white/5">
+                                <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500/80"></span><span class="w-2 h-2 rounded-full bg-yellow-500/80"></span><span class="w-2 h-2 rounded-full bg-green-500/80"></span></div>
+                                <div class="bg-zinc-900/60 text-[10px] text-gray-400 px-3 py-0.5 rounded-md flex-1 text-center font-mono truncate">rebecamartins.com.br</div>
+                            </div>
+                            <div class="relative flex-1 overflow-hidden">
+                                <img src="imagem/portfolio-nail-designer-estudio-unhas.png" alt="Rebeca Martins" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/111/fff?text=Rebeca+Martins';">
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4 flex flex-col justify-between flex-grow">
+                            <div class="space-y-2">
+                                <span class="text-xs font-bold text-purple-400">Estética & Beleza</span>
+                                <h3 class="text-xl font-bold text-white font-display">Rebeca Martins</h3>
+                                <p class="text-gray-400 text-xs">Landing page luxuosa estruturada para captar e converter novos agendamentos online.</p>
+                            </div>
+                            <a href="https://rebecamartinsnaildesigner.com.br/" target="_blank" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-purple-400 hover:text-white transition-colors group/btn">Ver Site Ativo <i class="fas fa-external-link-alt text-xs transition-transform group-hover/btn:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 3: Pet d'Avila -->
+                <div class="relative group">
+                    <div id="case3-desktop" class="bg-zinc-950 border border-white/5 rounded-2xl overflow-hidden hover:border-amber-500/30 transition-all duration-500 flex flex-col justify-between shadow-lg h-full">
+                        <div class="w-full aspect-[16/10] bg-zinc-900 flex flex-col border-b border-white/5 overflow-hidden">
+                            <div class="bg-zinc-950/80 px-4 py-2.5 flex items-center gap-2 border-b border-white/5">
+                                <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500/80"></span><span class="w-2 h-2 rounded-full bg-yellow-500/80"></span><span class="w-2 h-2 rounded-full bg-green-500/80"></span></div>
+                                <div class="bg-zinc-900/60 text-[10px] text-gray-400 px-3 py-0.5 rounded-md flex-1 text-center font-mono truncate">petdavilaa.com.br</div>
+                            </div>
+                            <div class="relative flex-1 overflow-hidden">
+                                <img src="imagem/portfolio-pet-shop-banho-tosa.png" alt="Pet d'Avila" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/111/fff?text=Pet+dAvila';">
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4 flex flex-col justify-between flex-grow">
+                            <div class="space-y-2">
+                                <span class="text-xs font-bold text-amber-400">Petshop & Estética Animal</span>
+                                <h3 class="text-xl font-bold text-white font-display">Pet d'Avila</h3>
+                                <p class="text-gray-400 text-xs">Site focado em captação de clientes, agendamento de cuidados e banho & tosa.</p>
+                            </div>
+                            <a href="https://petdavilaa.com.br/" target="_blank" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-amber-400 hover:text-white transition-colors group/btn">Ver Site Ativo <i class="fas fa-external-link-alt text-xs transition-transform group-hover/btn:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 4: Fênix Vedações -->
+                <div class="relative group">
+                    <div id="case4-desktop" class="bg-zinc-950 border border-white/5 rounded-2xl overflow-hidden hover:border-emerald-500/30 transition-all duration-500 flex flex-col justify-between shadow-lg h-full">
+                        <div class="w-full aspect-[16/10] bg-zinc-900 flex flex-col border-b border-white/5 overflow-hidden">
+                            <div class="bg-zinc-950/80 px-4 py-2.5 flex items-center gap-2 border-b border-white/5">
+                                <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500/80"></span><span class="w-2 h-2 rounded-full bg-yellow-500/80"></span><span class="w-2 h-2 rounded-full bg-green-500/80"></span></div>
+                                <div class="bg-zinc-900/60 text-[10px] text-gray-400 px-3 py-0.5 rounded-md flex-1 text-center font-mono truncate">fenixvedacoes.com.br</div>
+                            </div>
+                            <div class="relative flex-1 overflow-hidden">
+                                <img src="imagem/portfolio-vedacoes-industriais.png" alt="Fênix Vedações" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/111/fff?text=Fenix+Vedacoes';">
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4 flex flex-col justify-between flex-grow">
+                            <div class="space-y-2">
+                                <span class="text-xs font-bold text-emerald-400">Soluções Industriais</span>
+                                <h3 class="text-xl font-bold text-white font-display">Fênix Vedações</h3>
+                                <p class="text-gray-400 text-xs">Plataforma técnica com catálogo digital de vedações industriais e anéis de retenção.</p>
+                            </div>
+                            <a href="https://www.fenixvedacoes.com.br/index.html" target="_blank" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-emerald-400 hover:text-white transition-colors group/btn">Ver Site Ativo <i class="fas fa-external-link-alt text-xs transition-transform group-hover/btn:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 5: Adorada Materiais -->
+                <div class="relative group">
+                    <div id="case5-desktop" class="bg-zinc-950 border border-white/5 rounded-2xl overflow-hidden hover:border-pink-500/30 transition-all duration-500 flex flex-col justify-between shadow-lg h-full">
+                        <div class="w-full aspect-[16/10] bg-zinc-900 flex flex-col border-b border-white/5 overflow-hidden">
+                            <div class="bg-zinc-950/80 px-4 py-2.5 flex items-center gap-2 border-b border-white/5">
+                                <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500/80"></span><span class="w-2 h-2 rounded-full bg-yellow-500/80"></span><span class="w-2 h-2 rounded-full bg-green-500/80"></span></div>
+                                <div class="bg-zinc-900/60 text-[10px] text-gray-400 px-3 py-0.5 rounded-md flex-1 text-center font-mono truncate">adoradamateriais.com.br</div>
+                            </div>
+                            <div class="relative flex-1 overflow-hidden">
+                                <img src="imagem/portfolio-materiais-de-construcao.png" alt="Adorada Materiais" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/111/fff?text=Adorada+Materiais';">
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4 flex flex-col justify-between flex-grow">
+                            <div class="space-y-2">
+                                <span class="text-xs font-bold text-pink-400">Construção Civil</span>
+                                <h3 class="text-xl font-bold text-white font-display">Adorada Materiais</h3>
+                                <p class="text-gray-400 text-xs">Portal comercial focado em cotações ágeis de materiais para reforma e construção.</p>
+                            </div>
+                            <a href="https://adoradamateriais.com.br/" target="_blank" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-pink-400 hover:text-white transition-colors group/btn">Ver Site Ativo <i class="fas fa-external-link-alt text-xs transition-transform group-hover/btn:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 6: NS Embalagens -->
+                <div class="relative group">
+                    <div id="case6-desktop" class="bg-zinc-950 border border-white/5 rounded-2xl overflow-hidden hover:border-blue-500/30 transition-all duration-500 flex flex-col justify-between shadow-lg h-full">
+                        <div class="w-full aspect-[16/10] bg-zinc-900 flex flex-col border-b border-white/5 overflow-hidden">
+                            <div class="bg-zinc-950/80 px-4 py-2.5 flex items-center gap-2 border-b border-white/5">
+                                <div class="flex gap-1.5"><span class="w-2 h-2 rounded-full bg-red-500/80"></span><span class="w-2 h-2 rounded-full bg-yellow-500/80"></span><span class="w-2 h-2 rounded-full bg-green-500/80"></span></div>
+                                <div class="bg-zinc-900/60 text-[10px] text-gray-400 px-3 py-0.5 rounded-md flex-1 text-center font-mono truncate">nsembalagens.com.br</div>
+                            </div>
+                            <div class="relative flex-1 overflow-hidden">
+                                <img src="imagem/portfolio-fabricante-caixas-papelao.png" alt="NS Embalagens" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" onerror="this.onerror=null; this.src='https://placehold.co/600x400/111/fff?text=NS+Embalagens';">
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4 flex flex-col justify-between flex-grow">
+                            <div class="space-y-2">
+                                <span class="text-xs font-bold text-blue-400">Fábrica de Papelão Ondulado</span>
+                                <h3 class="text-xl font-bold text-white font-display">NS Embalagens</h3>
+                                <p class="text-gray-400 text-xs">Site industrial B2B completo de caixas de papelão e embalagens industriais sob medida.</p>
+                            </div>
+                            <a href="https://nsembalagens.com.br/" target="_blank" class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-blue-400 hover:text-white transition-colors group/btn">Ver Site Ativo <i class="fas fa-external-link-alt text-xs transition-transform group-hover/btn:translate-x-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PORTFÓLIO GOOGLE MEU NEGÓCIO -->
+    <section id="google" class="py-24 relative overflow-hidden bg-transparent">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4 reveal">
+                <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest bg-cyan-400/10 px-3 py-1 rounded-full">PRESENÇA DIGITAL E CONFIANÇA</span>
+                <h2 class="text-3xl sm:text-5xl font-black font-display text-white">Por que sua empresa precisa de site e Perfil do Google atualizado?</h2>
+                <p class="text-gray-400 text-lg font-light leading-relaxed max-w-3xl mx-auto">
+                    Antes de chamar no WhatsApp ou fechar um serviço, o cliente pesquisa no Google, compara empresas e avalia se o negócio transmite confiança. Um site profissional e um Perfil do Google bem atualizado ajudam sua empresa a aparecer melhor, passar mais credibilidade e atrair clientes mais preparados para comprar.
+                </p>
+                
+                <div class="pt-10 grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm text-gray-300 max-w-4xl mx-auto">
+                    <div class="p-6 bg-zinc-900/50 border border-white/5 rounded-2xl premium-card-border hover:border-cyan-500/30 transition-all text-left space-y-2">
+                        <span class="block text-4xl font-black text-cyan-400 font-display text-glow">86%</span>
+                        <p class="text-xs text-gray-400 leading-relaxed font-light">O Google concentra a maior parte das buscas no Brasil.</p>
+                    </div>
+                    <div class="p-6 bg-zinc-900/50 border border-white/5 rounded-2xl premium-card-border hover:border-purple-500/30 transition-all text-left space-y-2">
+                        <span class="block text-4xl font-black text-purple-400 font-display text-glow">76%</span>
+                        <p class="text-xs text-gray-400 leading-relaxed font-light">Quem pesquisa por algo próximo no celular pode visitar uma empresa em até um dia.</p>
+                    </div>
+                    <div class="p-6 bg-zinc-900/50 border border-white/5 rounded-2xl premium-card-border hover:border-amber-500/30 transition-all text-left space-y-2">
+                        <span class="block text-4xl font-black text-amber-400 font-display gold-glow">66%</span>
+                        <p class="text-xs text-gray-400 leading-relaxed font-light">Consumidores tendem a confiar mais em empresas que têm site próprio.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Título de Otimização e Atualizações do Perfil -->
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-2 reveal">
+                <span class="text-xs font-mono text-emerald-400 uppercase tracking-widest bg-emerald-500/10 px-3 py-1 rounded-full"><i class="fas fa-map-marked-alt mr-1"></i> Resultados Reais</span>
+                <h3 class="text-2xl sm:text-3xl font-black font-display text-white mt-4">Portfólio de Atualização do Perfil do Google</h3>
+                <p class="text-gray-400 text-sm font-light leading-relaxed">Confira otimizações estratégicas de fotos, localizações, branding e categorização de perfis que gerenciamos.</p>
+            </div>
+
+            <!-- Carrossel Peeking para Mobile (Com todos os 11 itens) -->
+            <div class="md:hidden carousel-outer" data-carousel-id="google">
+                <div class="carousel-track" data-carousel-slider>
+                    
+                    <!-- Google Slide 1: Sofia Turismo -->
+                    <div class="carousel-slide px-2" data-carousel-slide>
+                        <div class="relative aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex flex-col justify-end group">
+                            <img src="imagem/google-sofia-turismo.png" alt="Sofia Turismo" class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x400/111/fff?text=Google+Sofia+Turismo';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10 pointer-events-none"></div>
+                        </div>
+                    </div>
+
+                    <!-- Google Slide 2: Rebeca Martins -->
+                    <div class="carousel-slide px-2" data-carousel-slide>
+                        <div class="relative aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex flex-col justify-end group">
+                            <img src="imagem/google-rebeca-martins.png" alt="Rebeca Martins" class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x400/111/fff?text=Google+Rebeca+Martins';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10 pointer-events-none"></div>
+                        </div>
+                    </div>
+
+                    <!-- Google Slide 3: Pet da Vila -->
+                    <div class="carousel-slide px-2" data-carousel-slide>
+                        <div class="relative aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex flex-col justify-end group">
+                            <img src="imagem/google-pet-da-vila.png" alt="Pet da Vila" class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x400/111/fff?text=Google+Pet+da+Vila';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10 pointer-events-none"></div>
+                        </div>
+                    </div>
+
+                    <!-- Google Slide 4: Adorada Materiais -->
+                    <div class="carousel-slide px-2" data-carousel-slide>
+                        <div class="relative aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex flex-col justify-end group">
+                            <img src="imagem/google-adorada-materiais.png" alt="Adorada Materiais" class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x400/111/fff?text=Google+Adorada+Materiais';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10 pointer-events-none"></div>
+                        </div>
+                    </div>
+
+                    <!-- Google Slide 5: Pratika Vedações -->
+                    <div class="carousel-slide px-2" data-carousel-slide>
+                        <div class="relative aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex flex-col justify-end group">
+                            <img src="imagem/google-pratika-vedacoes.png" alt="Pratika Vedações" class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x400/111/fff?text=Google+Pratika+Vedacoes';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10 pointer-events-none"></div>
+                        </div>
+                    </div>
+
+                    <!-- Google Slide 6: Hyflei -->
+                    <div class="carousel-slide px-2" data-carousel-slide>
+                        <div class="relative aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex flex-col justify-end group">
+                            <img src="imagem/google-hyflei-tecnica.png" alt="Hyflei" class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x400/111/fff?text=Google+Hyflei';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10 pointer-events-none"></div>
+                        </div>
+                    </div>
+
+                    <!-- Google Slide 7: 2A Treinamentos -->
+                    <div class="carousel-slide px-2" data-carousel-slide>
+                        <div class="relative aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex flex-col justify-end group">
+                            <img src="imagem/google-2a-treinamentos.png" alt="2A Treinamentos" class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x400/111/fff?text=Google+2A+Treinamentos';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10 pointer-events-none"></div>
+                        </div>
+                    </div>
+
+                    <!-- Google Slide 8: Beatriz Facas -->
+                    <div class="carousel-slide px-2" data-carousel-slide>
+                        <div class="relative aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex flex-col justify-end group">
+                            <img src="imagem/google-beatriz-facas.png" alt="Beatriz Facas" class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x400/111/fff?text=Google+Beatriz+Facas';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10 pointer-events-none"></div>
+                        </div>
+                    </div>
+
+                    <!-- Google Slide 9: Ortoguaru Acrílicos -->
+                    <div class="carousel-slide px-2" data-carousel-slide>
+                        <div class="relative aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex flex-col justify-end group">
+                            <img src="imagem/google-ortoguaru-acrilicos.png" alt="Ortoguaru Acrílicos" class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x400/111/fff?text=Google+Ortoguaru';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10 pointer-events-none"></div>
+                        </div>
+                    </div>
+
+                    <!-- Google Slide 10: Fenix Vedações -->
+                    <div class="carousel-slide px-2" data-carousel-slide>
+                        <div class="relative aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex flex-col justify-end group">
+                            <img src="imagem/google-fenix-vedacoes.png" alt="Fenix Vedações" class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x400/111/fff?text=Google+Fenix+Vedacoes';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10 pointer-events-none"></div>
+                        </div>
+                    </div>
+
+                    <!-- Google Slide 11: NS Embalagens -->
+                    <div class="carousel-slide px-2" data-carousel-slide>
+                        <div class="relative aspect-square rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex flex-col justify-end group">
+                            <img src="imagem/google-ns-embalagens.png" alt="NS Embalagens" class="absolute inset-0 w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x400/111/fff?text=Google+NS+Embalagens';">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10 pointer-events-none"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Pagination Dots -->
+                <div class="flex justify-center space-x-2 mt-6" data-carousel-dots></div>
+            </div>
+
+            <!-- Grid de Perfis Otimizados (Desktop - Todos os 11 Perfis Restaurados e Ativos!) -->
+            <div class="hidden md:grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
+                
+                <!-- Google Case 1: Sofia Turismo -->
+                <div class="relative aspect-square rounded-2xl overflow-hidden hover:border-cyan-500/30 border border-white/10 transition-all duration-300 flex flex-col justify-end group shadow-xl">
+                    <img src="imagem/google-sofia-turismo.png" alt="Sofia Turismo" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x400/111/fff?text=Google+Sofia+Turismo';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent z-10 pointer-events-none"></div>
+                </div>
+
+                <!-- Google Case 2: Rebeca Martins -->
+                <div class="relative aspect-square rounded-2xl overflow-hidden hover:border-cyan-500/30 border border-white/10 transition-all duration-300 flex flex-col justify-end group shadow-xl">
+                    <img src="imagem/google-rebeca-martins.png" alt="Rebeca Martins" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x400/111/fff?text=Google+Rebeca+Martins';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent z-10 pointer-events-none"></div>
+                </div>
+
+                <!-- Google Case 3: Pet da Vila -->
+                <div class="relative aspect-square rounded-2xl overflow-hidden hover:border-cyan-500/30 border border-white/10 transition-all duration-300 flex flex-col justify-end group shadow-xl">
+                    <img src="imagem/google-pet-da-vila.png" alt="Pet da Vila" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x400/111/fff?text=Google+Pet+da+Vila';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent z-10 pointer-events-none"></div>
+                </div>
+
+                <!-- Google Case 4: Adorada Materiais -->
+                <div class="relative aspect-square rounded-2xl overflow-hidden hover:border-cyan-500/30 border border-white/10 transition-all duration-300 flex flex-col justify-end group shadow-xl">
+                    <img src="imagem/google-adorada-materiais.png" alt="Adorada Materiais" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x400/111/fff?text=Google+Adorada+Materiais';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent z-10 pointer-events-none"></div>
+                </div>
+
+                <!-- Google Case 5: Pratika Vedações -->
+                <div class="relative aspect-square rounded-2xl overflow-hidden hover:border-cyan-500/30 border border-white/10 transition-all duration-300 flex flex-col justify-end group shadow-xl">
+                    <img src="imagem/google-pratika-vedacoes.png" alt="Pratika Vedações" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x400/111/fff?text=Google+Pratika+Vedacoes';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent z-10 pointer-events-none"></div>
+                </div>
+
+                <!-- Google Case 6: Hyflei -->
+                <div class="relative aspect-square rounded-2xl overflow-hidden hover:border-cyan-500/30 border border-white/10 transition-all duration-300 flex flex-col justify-end group shadow-xl">
+                    <img src="imagem/google-hyflei-tecnica.png" alt="Hyflei" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x400/111/fff?text=Google+Hyflei';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent z-10 pointer-events-none"></div>
+                </div>
+
+                <!-- Google Case 7: 2A Treinamentos -->
+                <div class="relative aspect-square rounded-2xl overflow-hidden hover:border-cyan-500/30 border border-white/10 transition-all duration-300 flex flex-col justify-end group shadow-xl">
+                    <img src="imagem/google-2a-treinamentos.png" alt="2A Treinamentos" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x400/111/fff?text=Google+2A+Treinamentos';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent z-10 pointer-events-none"></div>
+                </div>
+
+                <!-- Google Case 8: Beatriz Facas -->
+                <div class="relative aspect-square rounded-2xl overflow-hidden hover:border-cyan-500/30 border border-white/10 transition-all duration-300 flex flex-col justify-end group shadow-xl">
+                    <img src="imagem/google-beatriz-facas.png" alt="Beatriz Facas" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x400/111/fff?text=Google+Beatriz+Facas';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent z-10 pointer-events-none"></div>
+                </div>
+
+                <!-- Google Case 9: Ortoguaru Acrílicos -->
+                <div class="relative aspect-square rounded-2xl overflow-hidden hover:border-cyan-500/30 border border-white/10 transition-all duration-300 flex flex-col justify-end group shadow-xl">
+                    <img src="imagem/google-ortoguaru-acrilicos.png" alt="Ortoguaru Acrílicos" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x400/111/fff?text=Google+Ortoguaru';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent z-10 pointer-events-none"></div>
+                </div>
+
+                <!-- Google Case 10: Fenix Vedações -->
+                <div class="relative aspect-square rounded-2xl overflow-hidden hover:border-cyan-500/30 border border-white/10 transition-all duration-300 flex flex-col justify-end group shadow-xl">
+                    <img src="imagem/google-fenix-vedacoes.png" alt="Fenix Vedações" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x400/111/fff?text=Google+Fenix+Vedacoes';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent z-10 pointer-events-none"></div>
+                </div>
+
+                <!-- Google Case 11: NS Embalagens -->
+                <div class="relative aspect-square rounded-2xl overflow-hidden hover:border-cyan-500/30 border border-white/10 transition-all duration-300 flex flex-col justify-end group shadow-xl">
+                    <img src="imagem/google-ns-embalagens.png" alt="NS Embalagens" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x400/111/fff?text=Google+NS+Embalagens';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent z-10 pointer-events-none"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SOBRE VOCÊ: Nossa História -->
+    <section id="sobre" class="py-24 relative bg-transparent overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <!-- Imagem da Equipe -->
+                <div class="relative flex flex-col justify-center items-center reveal">
+                    <div class="relative w-full max-w-md bg-zinc-950 border border-white/10 rounded-2xl p-4 overflow-hidden shadow-2xl">
+                        <img id="about-image" src="imagem/foto-eliel-santos.png" 
+                             alt="Eliel Santos" 
+                             class="w-full h-[450px] object-cover rounded-xl border border-white/10"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x800/111/fff?text=Foto+Eliel+Santos';">
+                        
+                        <!-- Substituição de Santos Digital Studio por Eliel Santos -->
+                        <div class="absolute bottom-8 left-8 right-8 bg-zinc-900/95 border border-white/10 backdrop-blur-md rounded-xl p-4 shadow-xl text-center">
+                            <h4 class="font-bold text-white text-md">ES Soluções Digitais</h4>
+                            <p class="text-xs text-cyan-400">Posicionamento Real & Tráfego Local</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Texto de Apresentação -->
+                <div class="space-y-8 reveal">
+                    <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest bg-cyan-400/10 px-3 py-1 rounded-full">Quem Somos</span>
+                    <h2 class="text-3xl sm:text-5xl font-black font-display text-white">Minha História & Compromisso</h2>
+                    
+                    <div class="space-y-4 text-gray-400 leading-relaxed font-light">
+                        <p>
+                            Olá! Sou <strong class="text-white">Eliel Santos</strong>, fundador da <strong class="text-white">ES Soluções Digitais</strong>, trabalho com criação de sites, landing pages, gestão de Instagram e otimização de Perfil do Google Meu Negócio para empresas que querem melhorar sua presença digital e atrair mais clientes pela internet.
+                        </p>
+                        <p>
+                            Meu foco é ajudar negócios de diferentes segmentos a transmitirem mais profissionalismo, confiança e autoridade no ambiente digital. Cada projeto é desenvolvido com atenção ao visual, à experiência do usuário, à velocidade do site e à estratégia de posicionamento online.
+                        </p>
+                        <p>
+                            Acredito que uma presença digital bem construída, unindo um site profissional, uma comunicação clara e um Perfil do Google atualizado, é um dos caminhos mais eficientes para gerar credibilidade, aparecer melhor nas buscas e transformar visitantes em clientes.
+                        </p>
+                        <p>
+                            Meu compromisso é entregar um trabalho direto, bem estruturado e funcional, sempre pensando no que realmente ajuda a empresa a crescer na internet.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-6 pt-6 border-t border-white/5">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-map-marker-alt text-cyan-400 text-xl"></i>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">Localização</h4>
+                                <p class="text-xs text-gray-400">Jardim Tranquilidade, Guarulhos - SP</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fab fa-whatsapp text-green-400 text-xl"></i>
+                            <div>
+                                <h4 class="text-sm font-bold text-white">WhatsApp</h4>
+                                <p class="text-xs text-gray-400">(11) 91337-4722</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER COM MAPS E ENDEREÇO COMPLETO -->
+    <footer class="bg-brand-dark border-t border-white/5 py-12 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+            
+            <!-- Branding Eliel Santos -->
+            <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                    <img src="imagem/logo.png" alt="Logo" class="h-10 w-auto object-contain" onerror="this.onerror=null; this.src='https://placehold.co/100x100/111/fff?text=ES';">
+                    <span class="font-display font-bold text-white text-md">ES Soluções Digitais</span>
+                </div>
+                <p class="text-xs text-gray-500 leading-relaxed max-w-md">
+                    © 2026 ES Soluções Digitais. Todos os direitos reservados.<br>
+                    Desenvolvimento de Websites, Landing Pages e Otimização Avançada de Perfil do Google Meu Negócio.
+                </p>
+            </div>
+
+            <!-- Dados Físicos Completo (Guarulhos) -->
+            <div class="space-y-4">
+                <h4 class="text-sm font-bold uppercase tracking-wider text-white">Localização</h4>
+                <div class="space-y-2 text-xs text-gray-400">
+                    <p class="flex items-start"><i class="fas fa-map-marker-alt text-cyan-400 mr-2 mt-0.5"></i> R. Dona Dica, 674<br>Jardim Tranquilidade, Guarulhos - SP<br>CEP 07052-000</p>
+                    <p class="flex items-center"><i class="fas fa-phone text-cyan-400 mr-2"></i> +55 (11) 91337-4722</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Botão WhatsApp Fixo Flutuante -->
+    <a href="https://wa.me/5511913374722?text=Ol%C3%A1%20Eliel,%20gostaria%20de%20solicitar%20um%20or%C3%A7amento%20para%20meu%20projeto!" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="fixed bottom-6 right-6 z-50 bg-[#25d366] hover:bg-[#20ba5a] text-white p-4 sm:p-5 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center animate-bounce group"
+       title="Falar no WhatsApp">
+        <i class="fab fa-whatsapp text-3xl sm:text-4xl"></i>
+    </a>
+
+    <!-- SCRIPTS E LÓGICA -->
+    <script>
+        // Lógica de animação de entrada com scroll (Intersection Observer)
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            const revealOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            reveals.forEach(el => revealOnScroll.observe(el));
+        });
+
+        // Lógica para mostrar e aplicar Glassmorphism na Navbar apenas no scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            
+            if (window.scrollY > 80) {
+                // Adiciona o visual fosco e bordas suaves ao rolar a página para baixo
+                nav.classList.add('bg-black/60', 'backdrop-blur-xl', 'border-white/10', 'shadow-2xl');
+                nav.classList.remove('bg-transparent', 'border-transparent');
+            } else {
+                // Remove o visual de caixa e deixa totalmente transparente quando no topo
+                nav.classList.remove('bg-black/60', 'backdrop-blur-xl', 'border-white/10', 'shadow-2xl');
+                nav.classList.add('bg-transparent', 'border-transparent');
+            }
+        });
+
+        // ===== SISTEMA DE CARROSSEL PREMIUM PEAKING =====
+        class PeekingCarousel {
+            constructor(container) {
+                this.container = container;
+                this.slider = container.querySelector('[data-carousel-slider]');
+                if (!this.slider) return;
+
+                this.slides = Array.from(this.slider.querySelectorAll('[data-carousel-slide]'));
+                if (this.slides.length === 0) return;
+
+                this.dotsContainer = container.querySelector('[data-carousel-dots]');
+                this.currentIndex = 0;
+                this.isDragging = false;
+                this.startX = 0;
+                this.currentX = 0;
+                this.baseTranslateX = 0;
+                this.autoplayTimer = null;
+
+                this.initDots();
+                this.initEvents();
+                this.update(true);
+                this.startAutoplay();
+            }
+
+            initDots() {
+                if (!this.dotsContainer) return;
+                this.dotsContainer.innerHTML = '';
+                this.slides.forEach((_, i) => {
+                    const dot = document.createElement('span');
+                    dot.className = `h-2 rounded-full bg-white/20 transition-all duration-300 cursor-pointer ${i === 0 ? 'bg-cyan-400 w-4' : 'w-2'}`;
+                    dot.addEventListener('click', () => {
+                        this.currentIndex = i;
+                        this.update();
+                        this.stopAutoplay();
+                        this.startAutoplay();
+                    });
+                    this.dotsContainer.appendChild(dot);
+                });
+                this.dots = Array.from(this.dotsContainer.children);
+            }
+
+            getCenteredTranslateX() {
+                const containerWidth = this.container.offsetWidth;
+                const activeSlide = this.slides[this.currentIndex];
+                const slideWidth = activeSlide.offsetWidth;
+                const slideLeft = activeSlide.offsetLeft;
+                return (containerWidth / 2) - (slideLeft + slideWidth / 2);
+            }
+
+            update(instant = false) {
+                if (instant) {
+                    this.slider.style.transition = 'none';
+                } else {
+                    this.slider.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                }
+
+                const translateX = this.getCenteredTranslateX();
+                this.slider.style.transform = `translateX(${translateX}px)`;
+                this.baseTranslateX = translateX;
+
+                this.slides.forEach((slide, i) => {
+                    if (i === this.currentIndex) {
+                        slide.classList.add('scale-100', 'opacity-100', 'z-10');
+                        slide.classList.remove('scale-90', 'opacity-40', 'z-0');
+                    } else {
+                        slide.classList.remove('scale-100', 'opacity-100', 'z-10');
+                        slide.classList.add('scale-90', 'opacity-40', 'z-0');
+                    }
+                });
+
+                if (this.dots) {
+                    this.dots.forEach((dot, i) => {
+                        if (i === this.currentIndex) {
+                            dot.className = 'h-2 rounded-full bg-cyan-400 w-4 transition-all duration-300';
+                        } else {
+                            dot.className = 'h-2 rounded-full bg-white/20 w-2 transition-all duration-300';
+                        }
+                    });
+                }
+            }
+
+            next() {
+                this.currentIndex = (this.currentIndex + 1) % this.slides.length;
+                this.update();
+            }
+
+            prev() {
+                this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+                this.update();
+            }
+
+            startAutoplay() {
+                this.stopAutoplay();
+                this.autoplayTimer = navigator.userAgent.match(/lighthouse/i) ? null : setInterval(() => this.next(), 4000);
+            }
+
+            stopAutoplay() {
+                if (this.autoplayTimer) {
+                    clearInterval(this.autoplayTimer);
+                    this.autoplayTimer = null;
+                }
+            }
+
+            initEvents() {
+                const getX = (e) => e.touches ? e.touches[0].clientX : e.clientX;
+
+                const handleStart = (e) => {
+                    this.isDragging = true;
+                    this.startX = getX(e);
+                    this.currentX = this.startX;
+                    this.stopAutoplay();
+                    this.slider.style.transition = 'none';
+                    if (!e.touches) e.preventDefault();
+                };
+
+                const handleMove = (e) => {
+                    if (!this.isDragging) return;
+                    this.currentX = getX(e);
+                    const diffX = this.currentX - this.startX;
+                    this.slider.style.transform = `translateX(${this.baseTranslateX + diffX}px)`;
+                };
+
+                const handleEnd = () => {
+                    if (!this.isDragging) return;
+                    this.isDragging = false;
+                    const diffX = this.currentX - this.startX;
+
+                    if (Math.abs(diffX) > 50) {
+                        if (diffX < 0) {
+                            this.next();
+                        } else {
+                            this.prev();
+                        }
+                    } else {
+                        this.update();
+                    }
+                    this.startAutoplay();
+                };
+
+                this.slider.addEventListener('touchstart', handleStart, { passive: true });
+                this.slider.addEventListener('touchmove', handleMove, { passive: true });
+                this.slider.addEventListener('touchend', handleEnd);
+
+                this.slider.addEventListener('mousedown', handleStart);
+                window.addEventListener('mousemove', handleMove);
+                window.addEventListener('mouseup', handleEnd);
+            }
+        }
+
+        // ===== INICIALIZAR CARRÓSSEIS E PERSPECTIVA 3D BACKGROUND =====
+        document.addEventListener('DOMContentLoaded', () => {
+            // Inicializar Carrósseis
+            const carousels = document.querySelectorAll('[data-carousel-id]');
+            carousels.forEach(container => {
+                new PeekingCarousel(container);
+            });
+
+            // ===== LÓGICA DO CANVAS 3D INTERATIVO (FONTE DE ALTO PADRÃO OTIMIZADO) =====
+            const ambientCanvas = document.getElementById('ambient-3d-canvas');
+            if (ambientCanvas) {
+                const actx = ambientCanvas.getContext('2d');
+                let points3D = [];
+                const totalPoints = 120; // Aumentado para um efeito mais visível e rico
+                const focalLength = 320;
+                let mouseX = 0, mouseY = 0;
+                let targetRotX = 0, targetRotY = 0;
+                let rotX = 0, rotY = 0;
+
+                function resizeAmbientCanvas() {
+                    ambientCanvas.width = window.innerWidth;
+                    ambientCanvas.height = window.innerHeight;
+                }
+
+                window.addEventListener('resize', resizeAmbientCanvas);
+                resizeAmbientCanvas();
+
+                // Gerar Pontos em Espaço 3D real de forma mais uniforme
+                for (let i = 0; i < totalPoints; i++) {
+                    points3D.push({
+                        x: (Math.random() - 0.5) * window.innerWidth * 1.8,
+                        y: (Math.random() - 0.5) * window.innerHeight * 1.8,
+                        z: (Math.random() - 0.5) * 800,
+                        size: Math.random() * 2.5 + 1.2,
+                        color: Math.random() > 0.4 ? 'rgba(6, 182, 212, 0.45)' : 'rgba(59, 130, 246, 0.35)' // Tons de Ciano & Azul Real
+                    });
+                }
+
+                // Capturar Coordenadas do Mouse para Interatividade 3D Suave
+                window.addEventListener('mousemove', (e) => {
+                    mouseX = (e.clientX - window.innerWidth / 2);
+                    mouseY = (e.clientY - window.innerHeight / 2);
+                    
+                    targetRotY = mouseX * 0.0006; // Rotação responsiva
+                    targetRotX = mouseY * 0.0006;
+                });
+
+                // Suporte para touch no Mobile
+                window.addEventListener('touchmove', (e) => {
+                    if (e.touches && e.touches[0]) {
+                        mouseX = (e.touches[0].clientX - window.innerWidth / 2);
+                        mouseY = (e.touches[0].clientY - window.innerHeight / 2);
+                        targetRotY = mouseX * 0.0004;
+                        targetRotX = mouseY * 0.0004;
+                    }
+                }, { passive: true });
+
+                // Loop de animação em perspectiva 3D
+                function render3DBackground() {
+                    actx.clearRect(0, 0, ambientCanvas.width, ambientCanvas.height);
+
+                    // Efeito de interpolação suave na rotação
+                    rotX += (targetRotX - rotX) * 0.05;
+                    rotY += (targetRotY - rotY) * 0.05;
+
+                    const cosX = Math.cos(rotX);
+                    const sinX = Math.sin(rotX);
+                    const cosY = Math.cos(rotY);
+                    const sinY = Math.sin(rotY);
+
+                    // Lista de pontos projetados para desenhar conexões inteligentes
+                    let projected = [];
+
+                    points3D.forEach((p) => {
+                        // Flutuação automática para dar vida
+                        p.z -= 0.4;
+                        if (p.z < -focalLength) p.z = 400; // Resetar para o fundo se passar da câmera
+
+                        // Rotação 3D ao redor do eixo Y
+                        let x1 = p.x * cosY - p.z * sinY;
+                        let z1 = p.z * cosY + p.x * sinY;
+
+                        // Rotação 3D ao redor do eixo X
+                        let y2 = p.y * cosX - z1 * sinX;
+                        let z2 = z1 * cosX + p.y * sinX;
+
+                        // Projeção de perspectiva 3D -> 2D
+                        const scale = focalLength / (focalLength + z2);
+                        const projX = x1 * scale + ambientCanvas.width / 2;
+                        const projY = y2 * scale + ambientCanvas.height / 2;
+
+                        if (projX >= 0 && projX <= ambientCanvas.width && projY >= 0 && projY <= ambientCanvas.height) {
+                            projected.push({ x: projX, y: projY, scale: scale, color: p.color, size: p.size });
+                        }
+                    });
+
+                    // Desenhar as conexões neurais próximas em perspectiva 3D de alta performance
+                    actx.lineWidth = 0.65;
+                    for (let i = 0; i < projected.length; i++) {
+                        for (let j = i + 1; j < projected.length; j++) {
+                            const dx = projected[i].x - projected[j].x;
+                            const dy = projected[i].y - projected[j].y;
+                            const dist = Math.sqrt(dx * dx + dy * dy);
+
+                            if (dist < 150) { // Distância para criar redes estruturadas
+                                // Opacidade varia conforme a proximidade
+                                actx.strokeStyle = `rgba(6, 182, 212, ${(1 - dist/150) * 0.12})`;
+                                actx.beginPath();
+                                actx.moveTo(projected[i].x, projected[i].y);
+                                actx.lineTo(projected[j].x, projected[j].y);
+                                actx.stroke();
+                            }
+                        }
+                    }
+
+                    // Desenhar nós 3D brilhantes
+                    projected.forEach((p) => {
+                        actx.fillStyle = p.color;
+                        actx.beginPath();
+                        actx.arc(p.x, p.y, p.size * p.scale, 0, Math.PI * 2);
+                        actx.fill();
+                    });
+
+                    requestAnimationFrame(render3DBackground);
+                }
+
+                render3DBackground();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            const carousels = document.querySelectorAll('[data-carousel-id]');
+            carousels.forEach(container => {
+                const slider = container.querySelector('[data-carousel-slider]');
+                if (slider && slider.peekingCarouselInstance) {
+                    slider.peekingCarouselInstance.update(true);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
